@@ -1,0 +1,56 @@
+/* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Your variable definitions remain the same */
+  --background-color: #141517;
+  --text-color:       #fff;
+  --accent-color:     #53FC18;
+  --navbar-height:    60px;
+  --sidebar-expanded: 256px;
+  --sidebar-collapsed: 56px;
+}
+
+/* --- CHANGE THIS --- */
+body {
+  /* Apply the CSS variables directly */
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  /* You can still @apply other things here if needed, like fonts,
+     but avoid @apply for the custom var()-based colors/spacing
+     directly on the body rule itself. */
+  /* For example, if you load Geist font and assign it to --font-geist-sans: */
+  /* font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; */
+}
+/* --- END CHANGE --- */
+
+
+@media (prefers-color-scheme: dark) {
+ /* Keep this */
+  :root {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+}
+/* hide-scrollbar utility */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* Ensure every interactive element meets the 44 × 44 px WCAG tap-target rule */
+@layer utilities {
+  .tap-target {
+    @apply inline-flex items-center justify-center;
+    width:44px;
+    height:44px;
+  }
+}html, body { margin: 0; height: 100%; }

@@ -1,0 +1,287 @@
+[data-theatre-mode-display=true] {
+    display: none!important
+}
+
+[data-theatre-mode-overflow=true] {
+    overflow-y: hidden!important
+}
+
+[data-theatre-mode-max-height=true] {
+    max-height: unset!important
+}
+
+.custom-toast[data-sonner-toast][data-styled=true] {
+    background-color: #232628;
+    border: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 4px;
+    overflow: hidden
+}
+
+.custom-toast[data-sonner-toast][data-styled=true] [data-content] {
+    flex-grow: 1
+}
+
+.custom-toast[data-sonner-toast][data-styled=true] [data-icon] {
+    height: 24px;
+    width: 24px
+}
+
+@media (max-width: 1024px) {
+    [data-sonner-toaster][data-y-position=bottom] {
+        bottom:calc(80px + env(safe-area-inset-bottom, 20px))!important
+    }
+}
+
+.markdown-panel h4,.markdown-panel h5,.markdown-panel h6 {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255/var(--tw-text-opacity,1))
+}
+
+.markdown-panel h4:first-child,.markdown-panel h5:first-child,.markdown-panel h6:first-child {
+    margin-top: 0
+}
+
+.markdown-panel h4 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 600
+}
+
+.markdown-panel h5 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600
+}
+
+.markdown-panel h6 {
+    font-size: 15px;
+    font-weight: 600
+}
+
+.markdown-panel a {
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    color: rgba(83,252,24,var(--tw-text-opacity,1))
+}
+
+.markdown-panel ol,.markdown-panel ul {
+    margin-bottom: .25rem;
+    list-style-position: inside;
+    padding-left: 1.25rem
+}
+
+.markdown-panel ul {
+    list-style-type: disc
+}
+
+.markdown-panel ol {
+    list-style-type: decimal
+}
+
+.markdown-panel li {
+    list-style-position: outside
+}
+
+.markdown-panel p {
+    margin-bottom: .5rem
+}
+
+.markdown-policy-page h4:first-child,.markdown-policy-page h5:first-child,.markdown-policy-page h6:first-child {
+    margin-top: 0
+}
+
+.markdown-policy-page h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgba(83,252,24,var(--tw-text-opacity,1))
+}
+
+@media (min-width: 1024px) {
+    .markdown-policy-page h1 {
+        font-size:2.25rem;
+        line-height: 2.5rem
+    }
+}
+
+.markdown-policy-page p {
+    margin-bottom: 1rem;
+    text-align: justify
+}
+
+.markdown-policy-page p:last-child {
+    margin-bottom: 0
+}
+
+.markdown-policy-page ol,.markdown-policy-page ul {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem
+}
+
+.markdown-policy-page ul {
+    list-style-type: disc
+}
+
+.markdown-policy-page a {
+    --tw-text-opacity: 1;
+    color: rgba(83,252,24,var(--tw-text-opacity,1))
+}
+
+.markdown-policy-page h2 {
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem
+}
+
+.markdown-policy-page h2,.markdown-policy-page h3 {
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgba(83,252,24,var(--tw-text-opacity,1))
+}
+
+.markdown-policy-page h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem
+}
+
+.markdown-policy-page h6 {
+    font-size: 1.25rem;
+    color: rgb(255 255 255/var(--tw-text-opacity,1));
+    text-decoration-line: underline
+}
+
+.markdown-policy-page h6,.markdown-policy-page summary {
+    font-weight: 600;
+    line-height: 1.75rem;
+    --tw-text-opacity: 1
+}
+
+.markdown-policy-page summary {
+    cursor: pointer;
+    font-size: 1.125rem;
+    color: rgba(83,252,24,var(--tw-text-opacity,1))
+}
+
+.markdown-dev-portal h4:first-child,.markdown-dev-portal h5:first-child,.markdown-dev-portal h6:first-child {
+    margin-top: 0
+}
+
+.markdown-dev-portal h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255/var(--tw-text-opacity,1))
+}
+
+@media (min-width: 1024px) {
+    .markdown-dev-portal h1 {
+        font-size:1.5rem;
+        line-height: 2rem
+    }
+}
+
+.markdown-dev-portal p {
+    margin-bottom: 1rem;
+    text-align: justify;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    --tw-text-opacity: 1;
+    color: rgba(159,166,173,var(--tw-text-opacity,1))
+}
+
+.markdown-dev-portal p:last-child {
+    margin-bottom: 0
+}
+
+.markdown-dev-portal ol,.markdown-dev-portal ul {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    --tw-text-opacity: 1;
+    color: rgba(159,166,173,var(--tw-text-opacity,1))
+}
+
+.markdown-dev-portal ul {
+    list-style-type: disc
+}
+
+.markdown-dev-portal a,.markdown-dev-portal h2 {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255/var(--tw-text-opacity,1))
+}
+
+.markdown-dev-portal h2 {
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 700
+}
+
+@media (min-width: 1024px) {
+    .markdown-dev-portal h2 {
+        font-size:1.25rem;
+        line-height: 1.75rem
+    }
+}
+
+.markdown-dev-portal h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.75rem;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255/var(--tw-text-opacity,1))
+}
+
+@media (min-width: 1024px) {
+    .markdown-dev-portal h3 {
+        font-size:1.125rem;
+        line-height: 1.75rem
+    }
+}
+
+.markdown-dev-portal strong {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255/var(--tw-text-opacity,1))
+}
+
+.markdown-dev-portal h6 {
+    font-size: 1.25rem;
+    text-decoration-line: underline
+}
+
+.markdown-dev-portal h6,.markdown-dev-portal summary {
+    font-weight: 600;
+    line-height: 1.75rem;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255/var(--tw-text-opacity,1))
+}
+
+.markdown-dev-portal summary {
+    cursor: pointer;
+    font-size: 1.125rem
+}
+
+.markdown-bounties a {
+    --tw-text-opacity: 1;
+    color: rgba(83,252,24,var(--tw-text-opacity,1));
+    text-decoration-line: underline
+}

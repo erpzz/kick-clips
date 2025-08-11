@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 300 140"
+  role="img"
+  aria-labelledby="title"
+>
+  <title id="title">KickClips</title>
+
+  <style>
+    .kc-green { fill:#39ff14; }
+    .kc-hole  { fill:#000; }
+    .glow     { filter:url(#neon); }
+  </style>
+
+  <defs>
+    <filter id="neon" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Film-strip “K” bar -->
+  <rect x="20" y="10" width="22" height="120" rx="4" class="kc-green glow"/>
+
+  <!-- Film holes -->
+  <g class="kc-hole">
+    <rect x="24" y="22"  width="14" height="14" rx="2"/>
+    <rect x="24" y="46"  width="14" height="14" rx="2"/>
+    <rect x="24" y="70"  width="14" height="14" rx="2"/>
+    <rect x="24" y="94"  width="14" height="14" rx="2"/>
+  </g>
+
+  <!-- Shifted “C” shape (moved 20px right) -->
+  <path
+    d="
+      M95,20
+      A40,40 0 1 0 95,120
+      L110,120
+      A25,25 0 1 1 110,20
+      Z"
+    class="kc-green glow"
+  />
+
+  <!-- Wordmark “KickClips” repositioned inside the C -->
+  <text
+    x="150" y="85"
+    font-family="Helvetica, Arial, sans-serif"
+    font-size="36"
+    font-weight="700"
+    text-anchor="middle"
+    class="kc-green glow"
+  >
+    KickClips
+  </text>
+</svg>

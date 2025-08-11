@@ -1,0 +1,9 @@
+/** @type {import('../store').Store} */
+export const redisStore = {
+  async topClipIds() {
+    throw new Error('redisStore not implemented');
+  },
+  async getClips() {
+    throw new Error('redisStore not implemented');
+  },
+};

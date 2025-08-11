@@ -1,0 +1,9 @@
+// tsconfig.script.json
+{
+    "extends": "./tsconfig.json", // Inherit settings from your main tsconfig
+    "compilerOptions": {
+      "module": "CommonJS" // Override module type just for script execution
+    }
+    // Include this if your script file is outside the default include paths
+    // "include": ["scripts/**/*.ts"]
+  }
