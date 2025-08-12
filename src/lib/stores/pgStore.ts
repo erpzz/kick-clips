@@ -27,7 +27,7 @@ export const pgStore: Store = {
    * This runs entirely on the DB (server-side), no client filtering.
    */
   async topClipIds(limit: number): Promise<string[]> {
-    const hoursBack = 96;
+    const hoursBack = 72;
     const sinceIso = new Date(Date.now() - hoursBack * 3_600_000).toISOString();
 
     const { data, error } = await supa
