@@ -13,7 +13,8 @@ const SERVICE_ROLE_KEY   = process.env.SUPA_SERVICE_KEY!;                    // 
 const KICK_CLIENT_ID     = process.env.NEXT_PUBLIC_KICK_CLIENT_ID!;
 const KICK_CLIENT_SECRET = process.env.KICK_CLIENT_SECRET!;
 const REDIRECT_URI       = process.env.NEXT_PUBLIC_KICK_REDIRECT_URI!;
-const TOKEN_KEY_HEX      = process.env.TOKEN_ENCRYPTION_KEY!;                // 32-byte hex
+const TOKEN_KEY_HEX      = process.env.TOKEN_ENCRYPTION_KEY!;
+const PROD_REDIRECT_URI = process.env.NEXT_PUBLIC_KICK_REDIRECT_URI_PROD!;// 32-byte hex
 
 if (!SUPABASE_URL || !SERVICE_ROLE_KEY || !KICK_CLIENT_ID ||
     !KICK_CLIENT_SECRET || !REDIRECT_URI || !TOKEN_KEY_HEX) {
@@ -73,7 +74,7 @@ export default async function handler(
         client_id:     KICK_CLIENT_ID,
         client_secret: KICK_CLIENT_SECRET,
         code,
-        redirect_uri:  REDIRECT_URI,
+        redirect_uri:  PROD_REDIRECT_URI,
         code_verifier: verifier,
       }).toString(),
     });
