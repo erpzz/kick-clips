@@ -78,7 +78,7 @@ export function processKickSeedData(
       // normalize signals
       const normViews    = Math.log2(views + 1);
       const normDuration = 1 / ( (c.duration ?? 1) ); 
-      const favFlag      = FAVORITES.has(c.channel) ? 1 : 0;
+      const favFlag      = FAVORITES.has(c.channel?.username ?? '') ? 1 : 0;
 
       // build raw weighted score
       const rawScore =

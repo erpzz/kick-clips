@@ -25,7 +25,7 @@ export async function upsertClips(clips: KickClip[]) {
       duration: c.duration ?? null,
       started_at: c.started_at,
       created_at: c.created_at,
-      vod_starts_at: c.vod_starts_at ?? null,
+      vod_starts_at: c.started_at ?? null,
       is_mature: c.is_mature ?? false,
       view_count: c.view_count ?? 0,
       likes_count: c.likes_count ?? 0,

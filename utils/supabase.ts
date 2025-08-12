@@ -2,8 +2,7 @@ import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl  = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-console.log('URL:', process.env.NEXT_PUBLIC_SUPABASE_URL)
-console.log('ANON:', process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
+
 /**
  * Shared Supabase client (anonymous key -- read-only in our case).
  * Throw immediately if the env vars aren’t present so we fail fast in CI.

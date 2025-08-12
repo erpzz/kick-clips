@@ -17,8 +17,8 @@ export function getRecommendedStreamers(
   const counts: Record<string, number> = {};
   clips.forEach(c => {
     const created = parseISO(c.created_at);
-    if (isAfter(created, cutoff)) {
-      const user = c.channel.username;
+    const user = c.channel?.username;
+    if (isAfter(created, cutoff) && user) {
       counts[user] = (counts[user] || 0) + 1;
     }
   });

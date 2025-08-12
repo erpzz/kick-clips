@@ -4,7 +4,6 @@ import Head from 'next/head';
 import ClipItem from '@/components/ClipItem';
 import type { KickClip } from '@/types/kickTypes';
 import dynamic from 'next/dynamic';
-import Header from '@/components/Header';
 import AuthButton from '@/components/AuthButton';
 
 interface SearchBarProps {
@@ -26,8 +25,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange }) => (
     />
   </div>
 );
-
-const ChatSidebar = dynamic(() => import('@/components/ChatSidebar'), { ssr: false });
 
 const UserListItem = ({ name, isLive }: { name: string; isLive: boolean }) => (
   <li className="flex justify-between items-center">
@@ -83,7 +80,6 @@ export default function Home() {
 
   return (
     <div className="bg-gray-900 text-white min-h-screen font-sans">
-      <Header />
 
       {/* Search bar at the top */}
       

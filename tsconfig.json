@@ -19,5 +19,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "scripts/seedToSupabase.js", "src/lib/stores/jsonStore", "src/lib/stores/redisStore"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "s"]
 }

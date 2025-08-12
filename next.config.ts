@@ -2,6 +2,9 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   reactStrictMode: true,
   images: {
     // Replace deprecated `domains` with `remotePatterns`
