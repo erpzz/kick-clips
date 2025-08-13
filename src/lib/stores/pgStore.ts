@@ -25,7 +25,7 @@ const TARGET_CATEGORY_IDS = [8549, 8548, 28, 16, 8379];
 
 export const pgStore: Store = {
   async topClipIds(limit: number): Promise<string[]> {
-    const hoursBack = 72;
+    const hoursBack = 140;
     const sinceIso = new Date(Date.now() - hoursBack * 3_600_000).toISOString();
 
     const { data, error } = await supa
