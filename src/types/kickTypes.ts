@@ -8,7 +8,6 @@ export interface KickClip {
     video_url: string;
     thumbnail_url: string;
     created_at: string; // ISO 8601 timestamp string
-    started_at: string;
     view_count: number;
     clip_url: string;
     likes_count?: number;
