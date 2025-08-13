@@ -11,9 +11,6 @@ type Row = {
   created_at: string | null
 }
 
-type ApiOK = { items: Row[] }
-type ApiErr = { error: string }
-
 const supa = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -22,17 +19,16 @@ const supa = createClient(
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ApiOK | ApiErr>
+  res: NextApiResponse<Row[]>
 ) {
-  if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Only GET allowed' })
-  }
+  if (req.method !== 'GET') return res.status(200).json([])
 
   try {
+    // Use the MV if you want; otherwise query clips with a 7-day filter.
     const sinceIso = new Date(Date.now() - 7 * 24 * 3600 * 1000).toISOString()
 
     const { data, error } = await supa
-      .from('clips') // use 'mv_top_clips_7d' here if you prefer the view
+      .from('clips') // or 'mv_top_clips_7d' if you created that view with channel_username
       .select(`
         id, title, view_count, clip_url, likes_count, created_at,
         channel:channels!clips_channel_id_fkey ( username )
@@ -44,15 +40,15 @@ export default async function handler(
       .limit(10)
 
     if (error) {
-      console.error('[api/cards/most-watched] supabase error', error)
+      console.error('[api/cards/top-clips] supabase error', error)
       res.setHeader('Cache-Control', 'public, max-age=60, s-maxage=300, stale-while-revalidate=600')
-      return res.status(200).json({ items: [] })
+      return res.status(200).json([])
     }
 
     const rows: Row[] = (data ?? []).map((c: any) => ({
       id: c.id,
       title: c.title ?? null,
-      channel_username: c.channel?.username ?? null,
+      channel_username: c.channel?.username ?? null, // flatten
       view_count: c.view_count ?? null,
       clip_url: c.clip_url ?? null,
       likes_count: c.likes_count ?? null,
@@ -60,9 +56,9 @@ export default async function handler(
     }))
 
     res.setHeader('Cache-Control', 'public, max-age=60, s-maxage=300, stale-while-revalidate=600')
-    return res.status(200).json({ items: rows })
+    return res.status(200).json(rows) // <-- plain array again
   } catch (e) {
-    console.error('[api/cards/most-watched] fatal', e)
-    return res.status(200).json({ items: [] })
+    console.error('[api/cards/top-clips] fatal', e)
+    return res.status(200).json([]) // never crash the client
   }
 }
