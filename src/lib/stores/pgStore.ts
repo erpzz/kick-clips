@@ -31,7 +31,7 @@ export const pgStore: Store = {
     const sinceIso = new Date(Date.now() - hoursBack * 3_600_000).toISOString();
 
     const { data, error } = await supa
-      .from('clips_recent')
+      .from('clips')
       .select('id')
       .gte('created_at', sinceIso)
       .in('category_id', TARGET_CATEGORY_IDS)
