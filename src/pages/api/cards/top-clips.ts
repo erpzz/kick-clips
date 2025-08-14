@@ -28,7 +28,7 @@ export default async function handler(
     const sinceIso = new Date(Date.now() - 7 * 24 * 3600 * 1000).toISOString()
 
     const { data, error } = await supa
-      .from('clips') // or 'mv_top_clips_7d' if you created that view with channel_username
+      .from('top_clips_7d') // or 'mv_top_clips_7d' if you created that view with channel_username
       .select(`
         id, title, view_count, clip_url, likes_count, created_at,
         channel:channels!clips_channel_id_fkey ( username )
