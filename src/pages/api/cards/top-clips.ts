@@ -29,15 +29,11 @@ export default async function handler(
 
     const { data, error } = await supa
       .from('mv_top_clips_7d') // or 'mv_top_clips_7d' if you created that view with channel_username
-      .select(`
-        id, title, view_count, clip_url, likes_count, created_at,
-        channel:channels!clips_channel_id_fkey ( username )
-      `)
-      .gte('created_at', sinceIso)
+      .select('id,title,channel_username,view_count,clip_url,likes_count,created_at')
       .order('view_count', { ascending: false })
-      .order('likes_count', { ascending: false })
+      .order('created_at', { ascending: false })
       .order('id', { ascending: true })
-      .limit(10)
+      .limit(5)
 
     if (error) {
       console.error('[api/cards/top-clips] supabase error', error)
