@@ -271,63 +271,10 @@ useEffect(() => {
         <section className={styles.kcCard} aria-labelledby="most-watched">
   <h2 id="most-watched" className={styles.kcSectionTitle}>Most Watched (7d)</h2>
   <ul className={styles.kcList}>
-    {topClips === null && (
-      <>
-        {[...Array(5)].map((_, i) => (
-          <li key={i} className={styles.kcListRow}>
-            <div className={styles.kcListLeft}>
-              <span className={styles.kcAvatar} aria-hidden />
-              <span className={styles.kcSkel} style={{height:12,width:'70%'}} />
-            </div>
-            <span className={styles.kcSkel} style={{height:12,width:48}} />
-          </li>
-        ))}
-      </>
-    )}
-    {topClips?.map((r) => {
-  const clipId = extractClipId(r.id)
-  const username = r.channel_username?.toLowerCase() || ''
-
-  // Prefer a known-good web_url if it points to Kick; else build from username + clipId
-  const safeWeb = r.web_url && r.web_url.startsWith('https://kick.com/') ? r.web_url : null
-  const href =
-    safeWeb ||
-    (clipId && username ? `https://kick.com/${username}/clips/${clipId}` : undefined)
-
-  return (
-    <li key={r.id} className={styles.kcListRow}>
-      <div className={styles.kcListLeft}>
-        {/* Text block */}
-        <div className={styles.kcListText}>
-          <div className={`${styles.kcListTitle} ${styles.uClamp1}`} title={r.title ?? 'Untitled'}>
-            {r.title ?? 'Untitled'}
-          </div>
-          <div className={styles.kcListMeta}>
-            @{username || 'unknown'}
-            {typeof r.view_count === 'number' ? ` • ${r.view_count.toLocaleString()} views` : ''}
-          </div>
-        </div>
-      </div>
-
-      {href && (
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.kcLinkBtn}
-          onClick={(e) => e.stopPropagation()}
-          aria-label="Watch this clip on Kick"
-        >
-          Watch
-        </a>
-      )}
-    </li>
-  )
-})}
-
-
-    {topClips?.length === 0 && <li className={styles.kcListRow}>No data</li>}
-  </ul>
+  <li className={styles.kcListRow}>
+    This section is under construction.
+  </li>
+</ul>
 </section>
 </aside>
       </main>
