@@ -262,7 +262,7 @@ useEffect(() => {
           )}
 
           {!loading && !hasMore && (
-            <div className={styles.kcState}>You’re all caught up 🎉</div>
+            <div className={styles.kcState}>Please refresh to get more content. Happy Scrolling! 😊</div>
           )}
         </section>
 
