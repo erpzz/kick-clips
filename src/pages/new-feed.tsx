@@ -239,7 +239,7 @@ useEffect(() => {
         <section aria-label="Clip feed" className={styles.kcFeed}>
           {error && <div role="status" className={styles.kcState}>Failed to load: {error}</div>}
           {!error && items.length === 0 && !loading && (
-            <div role="status" className={styles.kcState}>No clips yet.</div>
+            <div role="status" className={styles.kcState}>Attempting Internal Feed Refresh, Try again in 30 seconds.</div>
           )}
 
           {items.map((c) => (
