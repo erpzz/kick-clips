@@ -20,7 +20,7 @@ const TARGET_CATEGORY_IDS = [8549, 8548, 28, 16, 8379];
 export const pgStore: Store = {
   /** Return hottest clip IDs from chosen categories (sorted by view_count). */
   async topClipIds(limit: number): Promise<string[]> {
-    const hoursBack = 168
+    const hoursBack = 2880
     const sinceIso = new Date(Date.now() - hoursBack * 3_600_000).toISOString();
 
     const { data, error } = await supa
